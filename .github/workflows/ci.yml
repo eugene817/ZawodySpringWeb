@@ -31,6 +31,4 @@ jobs:
     - name: Check Code Formatting (Spotless)
       run: ./mvnw spotless:check 
 
-    # - name: Build and Test
-    #   run: ./mvnw clean verify
 
