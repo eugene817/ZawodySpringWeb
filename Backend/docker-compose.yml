@@ -1,0 +1,34 @@
+
+services:
+  db:
+    image: postgres:17
+    container_name: zawodyweb-db
+    environment:
+      POSTGRES_DB: zawodyweb
+      POSTGRES_USER: zawodyweb
+      POSTGRES_PASSWORD: zawodyweb
+    ports:
+      - "5434:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zawodyweb-app
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/zawodyweb
+      SPRING_DATASOURCE_USERNAME: zawodyweb
+      SPRING_DATASOURCE_PASSWORD: zawodyweb
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      TZ: Europe/Warsaw
+    ports:
+      - "8000:8080"  # HTTP
+      - "5005:5005"  # debug
+    restart: unless-stopped
+
+volumes:
+  db_data:
