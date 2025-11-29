@@ -1,4 +1,4 @@
-name: Java CI & Formatting
+name: Formating
 
 on:
   push:
