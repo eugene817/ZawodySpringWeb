@@ -1,19 +1,21 @@
-name: Formating
+name: Java CI with Coverage
 
 on:
   push:
     branches: [ "main" ]
-    # paths:
-    #   - 'Backend/**'
+    paths:
+      - 'Backend/**'
   pull_request:
     branches: [ "main" ]
     paths:
       - 'Backend/**'
+  workflow_dispatch:
 
 jobs:
-  check-code:
+  build-and-test:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write    
     defaults:
       run:
         working-directory: ./Backend
@@ -24,11 +26,36 @@ jobs:
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
-        java-version: '21'      
+        java-version: '21'
         distribution: 'temurin'
         cache: maven
 
     - name: Check Code Formatting (Spotless)
-      run: ./mvnw spotless:check 
+      run: ./mvnw spotless:check
+
+    - name: Run Tests with Coverage
+      run: ./mvnw clean verify
+
+    - name: Generate JaCoCo Badge
+      uses: cicirello/jacoco-badge-generator@v2
+      with:
+        jacoco-csv-file: Backend/target/site/jacoco/jacoco.csv
+        badges-directory: .github/badges
+        generate-branches-badge: true
+        generate-summary: true
+
+    - name: Commit and push badge
+      if: github.ref == 'refs/heads/main'
+      run: |
+        cd ..
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add .github/badges/*.svg
+        if git diff --staged --quiet; then
+          echo "No changes in coverage"
+        else
+          git commit -m "Update coverage badge"
+          git push
+        fi
 
 
