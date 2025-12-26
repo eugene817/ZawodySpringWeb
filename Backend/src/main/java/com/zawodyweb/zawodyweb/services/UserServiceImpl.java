@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
     var auth = SecurityContextHolder.getContext().getAuthentication();
 
     if (auth != null && auth.getPrincipal() instanceof User user) {
-      return UserResponse.toResponse(user, auth.getCredentials().toString());
+      return UserResponse.toResponse(user, "token");
     }
     throw new BusinessException("User not found");
   }

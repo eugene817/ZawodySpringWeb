@@ -19,7 +19,7 @@ public class AdminUserConfig {
       if (userRepository.findByLogin("admin").isEmpty()) {
         User admin = new User();
         admin.setLogin("admin");
-        admin.setPasswordHash(passwordEncoder.encode("securepass123"));
+        admin.setPasswordHash(passwordEncoder.encode("123"));
         admin.setRoles(Set.of(Role.ROLE_MODERATOR));
         admin.setEmail("admin@example.com");
 

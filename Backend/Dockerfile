@@ -12,10 +12,8 @@ RUN mvn -B -DskipTests package
 FROM eclipse-temurin:21-jdk AS runtime
 WORKDIR /app
 
-# имя артефакта подставь своё, если отличается
 COPY --from=build /app/target/*.jar app.jar
 
-# debug-порт 5005 (для IntelliJ)
 EXPOSE 8080 5005
 
 ENTRYPOINT ["java","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005","-jar","/app/app.jar"]
