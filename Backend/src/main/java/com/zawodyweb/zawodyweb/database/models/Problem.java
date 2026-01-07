@@ -3,9 +3,13 @@ package com.zawodyweb.zawodyweb.database.models;
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Set;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "problems")
+@Data
+@NoArgsConstructor
 public class Problem {
 
   @Id
