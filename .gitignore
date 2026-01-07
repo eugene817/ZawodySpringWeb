@@ -13,7 +13,6 @@ target/
 *.class
 *.jar
 *.war
-.mvn/
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
