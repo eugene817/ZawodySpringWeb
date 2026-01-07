@@ -1,19 +1,25 @@
+.idea/
+*.iml
+*.iws
+.vscode/
+.DS_Store
+Thumbs.db
+.settings/
+.classpath
+.project
+.faktorypath
+
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
+*.class
+*.jar
+*.war
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
-.mvn/timing.properties
-# https://maven.apache.org/wrapper/#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
-.idea
-.settings
-.faktorypath
-# Eclipse m2e generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
+
+node_modules/
+dist/
+.angular/
+
+logs/
+*.log
