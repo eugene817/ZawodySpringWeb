@@ -4,12 +4,12 @@ import { LoginRequest, AuthResponse } from '../models/auth.models';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root',
+	providedIn: 'root',
 })
 export class Auth {
-	private apiUrl = 'http://localhost:8000/api/auth';
+	private apiUrl = '/api/auth';
 
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient) { }
 
 	login(request: LoginRequest) {
 		return this.http.post<AuthResponse>(`${this.apiUrl}/login`, request).pipe(
