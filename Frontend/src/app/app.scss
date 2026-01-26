@@ -1,0 +1,30 @@
+nav {
+  padding: 15px;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 1px solid #dee2e6;
+
+  a {
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    &.active {
+      color: #007bff;
+      font-weight: bold;
+    }
+  }
+}
+
+hr {
+  margin: 0;
+  border: 0;
+}

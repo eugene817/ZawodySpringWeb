@@ -26,3 +26,11 @@ security:
     expiration-time: 3600000
 server:
   port: 8080
+
+logging:
+  level:
+    root:
+      INFO
+    com:
+      zawodyweb:
+        DEBUG
