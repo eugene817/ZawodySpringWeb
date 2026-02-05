@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'groovy'
     id 'com.diffplug.spotless' version '6.25.0'
+    id 'jacoco'
 }
 
 group = 'com.zawodyweb'
@@ -14,27 +15,23 @@ java {
 }
 
 repositories {
-    mavenCentral() // Только чистый центр
+    mavenCentral()
 }
 
 dependencies {
-    // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
     testCompileOnly 'org.projectlombok:lombok:1.18.30'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-    // MapStruct
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
-    // Spring Boot & Starter-ы
     implementation libs.org.springframework.boot.spring.boot.starter.web
     implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
     implementation libs.org.springframework.boot.spring.boot.starter.security
     implementation libs.org.springframework.boot.spring.boot.starter.data.redis.reactive
     implementation libs.jakarta.validation.jakarta.validation.api
     
-    // Auth & Utils
     implementation libs.io.jsonwebtoken.jjwt.api
     runtimeOnly libs.io.jsonwebtoken.jjwt.impl
     runtimeOnly libs.io.jsonwebtoken.jjwt.jackson
@@ -42,18 +39,15 @@ dependencies {
     implementation libs.org.apache.groovy.groovy
     runtimeOnly libs.org.postgresql.postgresql
 
-    // ТЕСТЫ
     testImplementation libs.org.springframework.boot.spring.boot.starter.test
     testImplementation libs.org.springframework.security.spring.security.test
     testImplementation libs.org.spockframework.spock.core
     testImplementation libs.org.spockframework.spock.spring
     testImplementation libs.com.h2database.h2
     
-    // Принудительно затыкаем дыру в JUnit
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-// ВОТ ЭТОТ БЛОК ДОЛЖЕН УБИТЬ КОНФЛИКТ ВЕРСИЙ РАЗ И НАВСЕГДА
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         if (details.requested.group == 'org.junit.platform') {
@@ -80,15 +74,24 @@ tasks.withType(JavaCompile).configureEach {
 spotless {
     java {
         target 'src/*/java/**/*.java'
-        googleJavaFormat() // Или palantirJavaFormat()
+        googleJavaFormat()
         removeUnusedImports()
         trimTrailingWhitespace()
         endWithNewline()
     }
     groovy {
         target 'src/*/groovy/**/*.groovy'
-        greclipse() // Форматтер для Groovy/Spock
+        greclipse()
         trimTrailingWhitespace()
         endWithNewline()
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = true
+        html.outputLocation = layout.buildDirectory.dir('reports/jacoco')
     }
 }

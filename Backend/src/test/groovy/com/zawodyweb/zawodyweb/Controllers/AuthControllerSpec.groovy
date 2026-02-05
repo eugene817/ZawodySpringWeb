@@ -24,7 +24,6 @@ class AuthControllerSpec extends Specification {
 	@Autowired UserRepository userRepository
 	@Autowired ObjectMapper objectMapper
 
-	// Аналог @BeforeEach
 	def setup() {
 		userRepository.deleteAll()
 	}
@@ -56,7 +55,6 @@ class AuthControllerSpec extends Specification {
 				password: "pass123",
 				firstName: "Name"
 				)
-		// Регистрируем пользователя через API (как в оригинальном тесте)
 		mockMvc.perform(post("/api/auth/register")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(objectMapper.writeValueAsString(registerRequest)))
