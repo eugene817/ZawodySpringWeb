@@ -1,19 +1,22 @@
-# --- build stage ---
-FROM maven:3.9-eclipse-temurin-21 AS build
+FROM eclipse-temurin:21-jdk-alpine AS build
 WORKDIR /app
 
-COPY pom.xml .
-RUN mvn -B -q -DskipTests dependency:go-offline
+COPY gradlew .
+COPY gradle ./gradle
+COPY build.gradle .
+COPY settings.gradle .
+COPY gradle/libs.versions.toml ./gradle/ 
+
+RUN ./gradlew --no-daemon dependencies
 
 COPY src ./src
-RUN mvn -B -DskipTests package
+RUN ./gradlew --no-daemon clean bootJar -x test
 
-# --- runtime stage ---
-FROM eclipse-temurin:21-jdk AS runtime
+FROM eclipse-temurin:21-jre-alpine AS runtime
 WORKDIR /app
 
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/build/libs/*.jar app.jar
 
 EXPOSE 8080 5005
 
-ENTRYPOINT ["java","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005","-jar","/app/app.jar"]
+ENTRYPOINT ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005", "-jar", "app.jar"]

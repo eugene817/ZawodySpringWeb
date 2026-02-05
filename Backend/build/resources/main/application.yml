@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: ZawodySpringWeb
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/zawodyweb}
+    username: ${SPRING_DATASOURCE_USERNAME:zawodyweb}
+    password: ${SPRING_DATASOURCE_PASSWORD:zawodyweb}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+  sql:
+    init:
+      mode: never
+
+springdoc:
+  swagger-ui:
+    path: /api/docs
+
+security:
+  jwt:
+    secret-key: 8ae564a34db5493bc58bf0d445ccaa7092dc5ef125751210accf5d9fdf24edc8
+    expiration-time: 3600000
+server:
+  port: 8080
+
+logging:
+  level:
+    root:
+      INFO
+    com:
+      zawodyweb:
+        DEBUG

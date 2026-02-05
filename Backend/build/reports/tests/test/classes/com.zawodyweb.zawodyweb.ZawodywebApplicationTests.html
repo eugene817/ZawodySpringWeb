@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ZawodywebApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ZawodywebApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.zawodyweb.zawodyweb.html">com.zawodyweb.zawodyweb</a> &gt; ZawodywebApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.022s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">0.022s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2026-02-05T19:02:20.097+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.zawodyweb.zawodyweb.ZawodywebApplicationTests]: ZawodywebApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-05T19:02:20.105+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.zawodyweb.zawodyweb.ZawodywebApplication for test class com.zawodyweb.zawodyweb.ZawodywebApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+2026-02-05T19:02:20.151+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] c.z.zawodyweb.ZawodywebApplicationTests  : Starting ZawodywebApplicationTests using Java 21.0.8 with PID 59156 (started by yasakar in /home/yasakar/Work/zawodyweb/Backend)
+2026-02-05T19:02:20.151+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] c.z.zawodyweb.ZawodywebApplicationTests  : Running with Spring Boot v3.5.7, Spring v6.2.12
+2026-02-05T19:02:20.152+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] c.z.zawodyweb.ZawodywebApplicationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-02-05T19:02:20.405+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-05T19:02:20.406+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-05T19:02:20.421+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
+2026-02-05T19:02:20.426+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-05T19:02:20.426+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-05T19:02:20.432+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zawodyweb.zawodyweb.database.repositories.ContestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-05T19:02:20.432+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zawodyweb.zawodyweb.database.repositories.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-05T19:02:20.432+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 Redis repository interfaces.
+2026-02-05T19:02:20.548+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-05T19:02:20.550+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-05T19:02:20.560+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-05T19:02:20.561+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-02-05T19:02:20.563+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2026-02-05T19:02:20.563+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-02-05T19:02:20.564+01:00  WARN 59156 --- [ZawodySpringWeb] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-05T19:02:20.564+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+Hibernate: 
+    create global temporary table HTE_contests(rn_ integer not null, visible boolean, end_time timestamp(6), id bigint, start_time timestamp(6), access_password varchar(64), name varchar(120), description varchar(2000), primary key (rn_)) TRANSACTIONAL
+2026-02-05T19:02:20.668+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists contests cascade 
+Hibernate: 
+    drop table if exists languages cascade 
+Hibernate: 
+    drop table if exists problem_languages cascade 
+Hibernate: 
+    drop table if exists problems cascade 
+Hibernate: 
+    drop table if exists submission_results cascade 
+Hibernate: 
+    drop table if exists submissions cascade 
+Hibernate: 
+    drop table if exists test_cases cascade 
+Hibernate: 
+    drop table if exists user_roles cascade 
+Hibernate: 
+    drop table if exists users cascade 
+Hibernate: 
+    drop sequence if exists contests_seq
+Hibernate: 
+    create sequence contests_seq start with 1 increment by 50
+Hibernate: 
+    create table contests (
+        visible boolean not null,
+        end_time timestamp(6),
+        id bigint not null,
+        start_time timestamp(6),
+        access_password varchar(64),
+        name varchar(120) not null,
+        description varchar(2000),
+        primary key (id)
+    )
+Hibernate: 
+    create table languages (
+        extension varchar(8) not null,
+        id bigint generated by default as identity,
+        name varchar(40) not null unique,
+        config clob,
+        primary key (id)
+    )
+Hibernate: 
+    create table problem_languages (
+        id bigint generated by default as identity,
+        language_id bigint not null,
+        problem_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table problems (
+        code_size_limit_kb integer,
+        max_points integer,
+        memory_limit_mb integer,
+        time_limit_ms integer,
+        visible_in_ranking boolean not null,
+        contest_id bigint not null,
+        id bigint generated by default as identity,
+        short_code varchar(10) not null,
+        name varchar(80) not null,
+        statement clob not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table submission_results (
+        memory_kb integer,
+        points integer,
+        runtime_ms integer,
+        id bigint generated by default as identity,
+        submission_id bigint not null,
+        test_case_id bigint not null,
+        notes clob,
+        status enum ('MEMORY_LIMIT','OK','RUNTIME_ERROR','SKIPPED','TIME_LIMIT','WRONG_ANSWER'),
+        primary key (id)
+    )
+Hibernate: 
+    create table submissions (
+        visible_in_ranking boolean not null,
+        id bigint generated by default as identity,
+        language_id bigint not null,
+        problem_id bigint not null,
+        submitted_at timestamp(6) with time zone not null,
+        user_id bigint not null,
+        client_ip varchar(45),
+        filename varchar(255),
+        source_code clob not null,
+        state enum ('ACCEPTED','COMPILATION_ERROR','COMPILING','NEW','QUEUED','RUNNING','RUNTIME_ERROR','TIME_LIMIT','WRONG_ANSWER') not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table test_cases (
+        id bigint generated by default as identity,
+        problem_id bigint not null,
+        order_tag varchar(32),
+        expected_output clob not null,
+        input_data clob not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table user_roles (
+        user_id bigint not null,
+        role enum ('ROLE_MODERATOR','ROLE_PROFESSOR','ROLE_USER')
+    )
+Hibernate: 
+    create table users (
+        enabled boolean not null,
+        id bigint generated by default as identity,
+        last_login_at timestamp(6) with time zone,
+        registered_at timestamp(6) with time zone not null,
+        first_name varchar(40),
+        last_name varchar(40),
+        login varchar(64) not null unique,
+        email varchar(120) unique,
+        password_hash varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists problem_languages 
+       add constraint FK4i0k76bq22dfeyye621coqq98 
+       foreign key (language_id) 
+       references languages
+Hibernate: 
+    alter table if exists problem_languages 
+       add constraint FK1a68xythji6wodqdtroentf8x 
+       foreign key (problem_id) 
+       references problems
+Hibernate: 
+    alter table if exists problems 
+       add constraint FKpa9waom3ntotn7gpm2spnsow5 
+       foreign key (contest_id) 
+       references contests
+Hibernate: 
+    alter table if exists submission_results 
+       add constraint FK3vpwf0yhpkyrbkiog5q9ul6vt 
+       foreign key (submission_id) 
+       references submissions
+Hibernate: 
+    alter table if exists submission_results 
+       add constraint FKey10w0e8k2v9xgpkdtpshsp0x 
+       foreign key (test_case_id) 
+       references test_cases
+Hibernate: 
+    alter table if exists submissions 
+       add constraint FK9fx61y3mco1ml81vg551maq0f 
+       foreign key (language_id) 
+       references languages
+Hibernate: 
+    alter table if exists submissions 
+       add constraint FKj5kbdqokftgx992cx24x3s583 
+       foreign key (problem_id) 
+       references problems
+Hibernate: 
+    alter table if exists submissions 
+       add constraint FK760bgu69957phd7hax608jdms 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists test_cases 
+       add constraint FKtddrw6qnmvhxky105cag980j3 
+       foreign key (problem_id) 
+       references problems
+Hibernate: 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2026-02-05T19:02:20.714+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-05T19:02:20.821+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-02-05T19:02:20.822+01:00  WARN 59156 --- [ZawodySpringWeb] [    Test worker] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-02-05T19:02:20.891+01:00  WARN 59156 --- [ZawodySpringWeb] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-05T19:02:21.048+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-02-05T19:02:21.106+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-02-05T19:02:21.281+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] c.z.zawodyweb.ZawodywebApplicationTests  : Started ZawodywebApplicationTests in 1.163 seconds (process running for 12.836)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+--------------- Created: admin ------------------
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.14.3</a> at Feb 5, 2026, 7:02:24 PM</p>
+</div>
+</div>
+</body>
+</html>

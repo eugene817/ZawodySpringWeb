@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.zawodyweb.zawodyweb.Controllers.AuthControllerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-05T18:02:21.487Z" hostname="nixos" time="0.872">
+  <properties/>
+  <testcase name="login_ShouldReturn401_WhenPasswordIsWrong()" classname="com.zawodyweb.zawodyweb.Controllers.AuthControllerTest" time="0.345"/>
+  <testcase name="login_ShouldReturnToken_WhenCredentialsAreCorrect()" classname="com.zawodyweb.zawodyweb.Controllers.AuthControllerTest" time="0.345"/>
+  <testcase name="register_ShouldReturnToken_WhenRequestIsValid()" classname="com.zawodyweb.zawodyweb.Controllers.AuthControllerTest" time="0.178"/>
+  <system-out><![CDATA[2026-02-05T19:02:21.477+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.zawodyweb.zawodyweb.Controllers.AuthControllerTest]: AuthControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-02-05T19:02:21.481+01:00  INFO 59156 --- [ZawodySpringWeb] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.zawodyweb.zawodyweb.ZawodywebApplication for test class com.zawodyweb.zawodyweb.Controllers.AuthControllerTest
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T19:02:21.501+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T19:02:21.502+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T19:02:21.502+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+2026-02-05T19:02:21.667+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-02-05T19:02:21.667+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T19:02:21.667+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2026-02-05T19:02:21.824+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Failed to authenticate since password does not match stored value
+2026-02-05T19:02:21.824+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.authentication.ProviderManager     : Authentication failed with provider DaoAuthenticationProvider since Bad credentials
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T19:02:21.846+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T19:02:21.846+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T19:02:21.846+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+2026-02-05T19:02:22.009+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/login
+2026-02-05T19:02:22.009+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T19:02:22.009+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/login
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2026-02-05T19:02:22.166+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T19:02:22.192+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T19:02:22.193+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T19:02:22.193+01:00 DEBUG 59156 --- [ZawodySpringWeb] [    Test worker] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

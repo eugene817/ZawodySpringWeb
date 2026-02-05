@@ -1,0 +1,94 @@
+plugins {
+    id 'java-library'
+    id 'groovy'
+    id 'com.diffplug.spotless' version '6.25.0'
+}
+
+group = 'com.zawodyweb'
+version = '0.1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral() // Только чистый центр
+}
+
+dependencies {
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    // MapStruct
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    // Spring Boot & Starter-ы
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
+    implementation libs.org.springframework.boot.spring.boot.starter.security
+    implementation libs.org.springframework.boot.spring.boot.starter.data.redis.reactive
+    implementation libs.jakarta.validation.jakarta.validation.api
+    
+    // Auth & Utils
+    implementation libs.io.jsonwebtoken.jjwt.api
+    runtimeOnly libs.io.jsonwebtoken.jjwt.impl
+    runtimeOnly libs.io.jsonwebtoken.jjwt.jackson
+    implementation libs.org.springdoc.springdoc.openapi.starter.webmvc.ui
+    implementation libs.org.apache.groovy.groovy
+    runtimeOnly libs.org.postgresql.postgresql
+
+    // ТЕСТЫ
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.springframework.security.spring.security.test
+    testImplementation libs.org.spockframework.spock.core
+    testImplementation libs.org.spockframework.spock.spring
+    testImplementation libs.com.h2database.h2
+    
+    // Принудительно затыкаем дыру в JUnit
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// ВОТ ЭТОТ БЛОК ДОЛЖЕН УБИТЬ КОНФЛИКТ ВЕРСИЙ РАЗ И НАВСЕГДА
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.junit.platform') {
+            details.useVersion '1.10.2'
+        }
+        if (details.requested.group == 'org.junit.jupiter') {
+            details.useVersion '5.10.2'
+        }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << '-parameters'
+    options.encoding = 'UTF-8'
+}
+
+spotless {
+    java {
+        target 'src/*/java/**/*.java'
+        googleJavaFormat() // Или palantirJavaFormat()
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+    groovy {
+        target 'src/*/groovy/**/*.groovy'
+        greclipse() // Форматтер для Groovy/Spock
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
