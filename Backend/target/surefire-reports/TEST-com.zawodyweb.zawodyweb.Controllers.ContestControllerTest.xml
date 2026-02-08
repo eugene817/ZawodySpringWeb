@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="15.496" tests="7" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/yasakar/Work/zawodyweb/Backend/target/test-classes:/home/yasakar/Work/zawodyweb/Backend/target/classes:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.5.7/spring-boot-starter-data-jpa-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.7/spring-boot-starter-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot/3.5.7/spring-boot-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.7/spring-boot-autoconfigure-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.7/spring-boot-starter-logging-3.5.7.jar:/home/yasakar/.m2/repository/ch/qos/logback/logback-classic/1.5.20/logback-classic-1.5.20.jar:/home/yasakar/.m2/repository/ch/qos/logback/logback-core/1.5.20/logback-core-1.5.20.jar:/home/yasakar/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/home/yasakar/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/yasakar/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/home/yasakar/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/yasakar/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.5.7/spring-boot-starter-jdbc-3.5.7.jar:/home/yasakar/.m2/repository/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.jar:/home/yasakar/.m2/repository/org/springframework/spring-jdbc/6.2.12/spring-jdbc-6.2.12.jar:/home/yasakar/.m2/repository/org/hibernate/orm/hibernate-core/6.6.33.Final/hibernate-core-6.6.33.Final.jar:/home/yasakar/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/yasakar/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/yasakar/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/yasakar/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/yasakar/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/yasakar/.m2/repository/com/fasterxml/classmate/1.7.1/classmate-1.7.1.jar:/home/yasakar/.m2/repository/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar:/home/yasakar/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.6/jaxb-runtime-4.0.6.jar:/home/yasakar/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.6/jaxb-core-4.0.6.jar:/home/yasakar/.m2/repository/org/eclipse/angus/angus-activation/2.0.3/angus-activation-2.0.3.jar:/home/yasakar/.m2/repository/org/glassfish/jaxb/txw2/4.0.6/txw2-4.0.6.jar:/home/yasakar/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/yasakar/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/yasakar/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-jpa/3.5.5/spring-data-jpa-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-commons/3.5.5/spring-data-commons-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/spring-orm/6.2.12/spring-orm-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-context/6.2.12/spring-context-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-tx/6.2.12/spring-tx-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-beans/6.2.12/spring-beans-6.2.12.jar:/home/yasakar/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/yasakar/.m2/repository/org/springframework/spring-aspects/6.2.12/spring-aspects-6.2.12.jar:/home/yasakar/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-data-redis-reactive/3.5.7/spring-boot-starter-data-redis-reactive-3.5.7.jar:/home/yasakar/.m2/repository/io/lettuce/lettuce-core/6.6.0.RELEASE/lettuce-core-6.6.0.RELEASE.jar:/home/yasakar/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar:/home/yasakar/.m2/repository/io/netty/netty-common/4.1.128.Final/netty-common-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-handler/4.1.128.Final/netty-handler-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-resolver/4.1.128.Final/netty-resolver-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-buffer/4.1.128.Final/netty-buffer-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.128.Final/netty-transport-native-unix-common-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-codec/4.1.128.Final/netty-codec-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-transport/4.1.128.Final/netty-transport-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/projectreactor/reactor-core/3.7.12/reactor-core-3.7.12.jar:/home/yasakar/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-redis/3.5.5/spring-data-redis-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-keyvalue/3.5.5/spring-data-keyvalue-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/spring-oxm/6.2.12/spring-oxm-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-context-support/6.2.12/spring-context-support-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.7/spring-boot-starter-web-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.7/spring-boot-starter-json-3.5.7.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.2/jackson-datatype-jdk8-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.2/jackson-datatype-jsr310-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.2/jackson-module-parameter-names-2.19.2.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.7/spring-boot-starter-tomcat-3.5.7.jar:/home/yasakar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.48/tomcat-embed-core-10.1.48.jar:/home/yasakar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.48/tomcat-embed-el-10.1.48.jar:/home/yasakar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.48/tomcat-embed-websocket-10.1.48.jar:/home/yasakar/.m2/repository/org/springframework/spring-web/6.2.12/spring-web-6.2.12.jar:/home/yasakar/.m2/repository/io/micrometer/micrometer-observation/1.15.5/micrometer-observation-1.15.5.jar:/home/yasakar/.m2/repository/io/micrometer/micrometer-commons/1.15.5/micrometer-commons-1.15.5.jar:/home/yasakar/.m2/repository/org/springframework/spring-webmvc/6.2.12/spring-webmvc-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-expression/6.2.12/spring-expression-6.2.12.jar:/home/yasakar/.m2/repository/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar:/home/yasakar/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/yasakar/.m2/repository/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.7/spring-boot-starter-test-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-test/3.5.7/spring-boot-test-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.7/spring-boot-test-autoconfigure-3.5.7.jar:/home/yasakar/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/yasakar/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.4/jakarta.xml.bind-api-4.0.4.jar:/home/yasakar/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar:/home/yasakar/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/yasakar/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/yasakar/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/yasakar/.m2/repository/org/assertj/assertj-core/3.27.6/assertj-core-3.27.6.jar:/home/yasakar/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/yasakar/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/home/yasakar/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/home/yasakar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar:/home/yasakar/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/yasakar/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/home/yasakar/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/yasakar/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/yasakar/.m2/repository/org/springframework/spring-core/6.2.12/spring-core-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-jcl/6.2.12/spring-jcl-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-test/6.2.12/spring-test-6.2.12.jar:/home/yasakar/.m2/repository/org/xmlunit/xmlunit-core/2.10.4/xmlunit-core-2.10.4.jar:/home/yasakar/.m2/repository/io/projectreactor/reactor-test/3.7.12/reactor-test-3.7.12.jar:/home/yasakar/.m2/repository/jakarta/validation/jakarta.validation-api/4.0.0-M1/jakarta.validation-api-4.0.0-M1.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.5.7/spring-boot-starter-security-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/spring-aop/6.2.12/spring-aop-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-config/6.5.6/spring-security-config-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-web/6.5.6/spring-security-web-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-test/6.5.6/spring-security-test-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-core/6.5.6/spring-security-core-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-crypto/6.5.6/spring-security-crypto-6.5.6.jar:/home/yasakar/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.5/jjwt-api-0.11.5.jar:/home/yasakar/.m2/repository/io/jsonwebtoken/jjwt-impl/0.11.5/jjwt-impl-0.11.5.jar:/home/yasakar/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.11.5/jjwt-jackson-0.11.5.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/yasakar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.4/springdoc-openapi-starter-webmvc-ui-2.8.4.jar:/home/yasakar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.4/springdoc-openapi-starter-webmvc-api-2.8.4.jar:/home/yasakar/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.4/springdoc-openapi-starter-common-2.8.4.jar:/home/yasakar/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.28/swagger-core-jakarta-2.2.28.jar:/home/yasakar/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/yasakar/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.28/swagger-annotations-jakarta-2.2.28.jar:/home/yasakar/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.28/swagger-models-jakarta-2.2.28.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.2/jackson-dataformat-yaml-2.19.2.jar:/home/yasakar/.m2/repository/org/webjars/swagger-ui/5.18.2/swagger-ui-5.18.2.jar:/home/yasakar/.m2/repository/org/webjars/webjars-locator-lite/1.1.2/webjars-locator-lite-1.1.2.jar:/home/yasakar/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/yasakar/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/yasakar/.m2/repository/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar:/home/yasakar/.m2/repository/org/spockframework/spock-core/2.4-M1-groovy-4.0/spock-core-2.4-M1-groovy-4.0.jar:/home/yasakar/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/home/yasakar/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/yasakar/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/home/yasakar/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/yasakar/.m2/repository/org/spockframework/spock-spring/2.4-M1-groovy-4.0/spock-spring-2.4-M1-groovy-4.0.jar:/home/yasakar/.m2/repository/org/apache/groovy/groovy/4.0.14/groovy-4.0.14.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://openjdk.org/"/>
+    <property name="user.timezone" value="Europe/Warsaw"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="APPLICATION_NAME" value="ZawodySpringWeb"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/nix/store/hm028d05qs6138ggq02239sh6qf5xwd6-openjdk-21.0.8+9/lib/openjdk/lib"/>
+    <property name="sun.java.command" value="/home/yasakar/Work/zawodyweb/Backend/target/surefire/surefirebooter-20260205174647439_3.jar /home/yasakar/Work/zawodyweb/Backend/target/surefire 2026-02-05T17-46-47_339-jvmRun1 surefire-20260205174647439_1tmp surefire_0-20260205174647439_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/yasakar/Work/zawodyweb/Backend/target/test-classes:/home/yasakar/Work/zawodyweb/Backend/target/classes:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.5.7/spring-boot-starter-data-jpa-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter/3.5.7/spring-boot-starter-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot/3.5.7/spring-boot-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.5.7/spring-boot-autoconfigure-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.5.7/spring-boot-starter-logging-3.5.7.jar:/home/yasakar/.m2/repository/ch/qos/logback/logback-classic/1.5.20/logback-classic-1.5.20.jar:/home/yasakar/.m2/repository/ch/qos/logback/logback-core/1.5.20/logback-core-1.5.20.jar:/home/yasakar/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/home/yasakar/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/yasakar/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/home/yasakar/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/yasakar/.m2/repository/org/yaml/snakeyaml/2.4/snakeyaml-2.4.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.5.7/spring-boot-starter-jdbc-3.5.7.jar:/home/yasakar/.m2/repository/com/zaxxer/HikariCP/6.3.3/HikariCP-6.3.3.jar:/home/yasakar/.m2/repository/org/springframework/spring-jdbc/6.2.12/spring-jdbc-6.2.12.jar:/home/yasakar/.m2/repository/org/hibernate/orm/hibernate-core/6.6.33.Final/hibernate-core-6.6.33.Final.jar:/home/yasakar/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/yasakar/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/yasakar/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/yasakar/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/yasakar/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/yasakar/.m2/repository/com/fasterxml/classmate/1.7.1/classmate-1.7.1.jar:/home/yasakar/.m2/repository/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar:/home/yasakar/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.6/jaxb-runtime-4.0.6.jar:/home/yasakar/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.6/jaxb-core-4.0.6.jar:/home/yasakar/.m2/repository/org/eclipse/angus/angus-activation/2.0.3/angus-activation-2.0.3.jar:/home/yasakar/.m2/repository/org/glassfish/jaxb/txw2/4.0.6/txw2-4.0.6.jar:/home/yasakar/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/yasakar/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/yasakar/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-jpa/3.5.5/spring-data-jpa-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-commons/3.5.5/spring-data-commons-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/spring-orm/6.2.12/spring-orm-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-context/6.2.12/spring-context-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-tx/6.2.12/spring-tx-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-beans/6.2.12/spring-beans-6.2.12.jar:/home/yasakar/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/yasakar/.m2/repository/org/springframework/spring-aspects/6.2.12/spring-aspects-6.2.12.jar:/home/yasakar/.m2/repository/org/aspectj/aspectjweaver/1.9.24/aspectjweaver-1.9.24.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-data-redis-reactive/3.5.7/spring-boot-starter-data-redis-reactive-3.5.7.jar:/home/yasakar/.m2/repository/io/lettuce/lettuce-core/6.6.0.RELEASE/lettuce-core-6.6.0.RELEASE.jar:/home/yasakar/.m2/repository/redis/clients/authentication/redis-authx-core/0.1.1-beta2/redis-authx-core-0.1.1-beta2.jar:/home/yasakar/.m2/repository/io/netty/netty-common/4.1.128.Final/netty-common-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-handler/4.1.128.Final/netty-handler-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-resolver/4.1.128.Final/netty-resolver-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-buffer/4.1.128.Final/netty-buffer-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.128.Final/netty-transport-native-unix-common-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-codec/4.1.128.Final/netty-codec-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/netty/netty-transport/4.1.128.Final/netty-transport-4.1.128.Final.jar:/home/yasakar/.m2/repository/io/projectreactor/reactor-core/3.7.12/reactor-core-3.7.12.jar:/home/yasakar/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-redis/3.5.5/spring-data-redis-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/data/spring-data-keyvalue/3.5.5/spring-data-keyvalue-3.5.5.jar:/home/yasakar/.m2/repository/org/springframework/spring-oxm/6.2.12/spring-oxm-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-context-support/6.2.12/spring-context-support-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.5.7/spring-boot-starter-web-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.5.7/spring-boot-starter-json-3.5.7.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.19.2/jackson-datatype-jdk8-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.19.2/jackson-datatype-jsr310-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.19.2/jackson-module-parameter-names-2.19.2.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.5.7/spring-boot-starter-tomcat-3.5.7.jar:/home/yasakar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.48/tomcat-embed-core-10.1.48.jar:/home/yasakar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.48/tomcat-embed-el-10.1.48.jar:/home/yasakar/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.48/tomcat-embed-websocket-10.1.48.jar:/home/yasakar/.m2/repository/org/springframework/spring-web/6.2.12/spring-web-6.2.12.jar:/home/yasakar/.m2/repository/io/micrometer/micrometer-observation/1.15.5/micrometer-observation-1.15.5.jar:/home/yasakar/.m2/repository/io/micrometer/micrometer-commons/1.15.5/micrometer-commons-1.15.5.jar:/home/yasakar/.m2/repository/org/springframework/spring-webmvc/6.2.12/spring-webmvc-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-expression/6.2.12/spring-expression-6.2.12.jar:/home/yasakar/.m2/repository/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar:/home/yasakar/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/home/yasakar/.m2/repository/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.5.7/spring-boot-starter-test-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-test/3.5.7/spring-boot-test-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.5.7/spring-boot-test-autoconfigure-3.5.7.jar:/home/yasakar/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/yasakar/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.4/jakarta.xml.bind-api-4.0.4.jar:/home/yasakar/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar:/home/yasakar/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/yasakar/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/yasakar/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/yasakar/.m2/repository/org/assertj/assertj-core/3.27.6/assertj-core-3.27.6.jar:/home/yasakar/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/yasakar/.m2/repository/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter/5.12.2/junit-jupiter-5.12.2.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.12.2/junit-jupiter-api-5.12.2.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.12.2/junit-jupiter-params-5.12.2.jar:/home/yasakar/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.12.2/junit-jupiter-engine-5.12.2.jar:/home/yasakar/.m2/repository/org/mockito/mockito-core/5.17.0/mockito-core-5.17.0.jar:/home/yasakar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar:/home/yasakar/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/yasakar/.m2/repository/org/mockito/mockito-junit-jupiter/5.17.0/mockito-junit-jupiter-5.17.0.jar:/home/yasakar/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/yasakar/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/yasakar/.m2/repository/org/springframework/spring-core/6.2.12/spring-core-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-jcl/6.2.12/spring-jcl-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/spring-test/6.2.12/spring-test-6.2.12.jar:/home/yasakar/.m2/repository/org/xmlunit/xmlunit-core/2.10.4/xmlunit-core-2.10.4.jar:/home/yasakar/.m2/repository/io/projectreactor/reactor-test/3.7.12/reactor-test-3.7.12.jar:/home/yasakar/.m2/repository/jakarta/validation/jakarta.validation-api/4.0.0-M1/jakarta.validation-api-4.0.0-M1.jar:/home/yasakar/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.5.7/spring-boot-starter-security-3.5.7.jar:/home/yasakar/.m2/repository/org/springframework/spring-aop/6.2.12/spring-aop-6.2.12.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-config/6.5.6/spring-security-config-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-web/6.5.6/spring-security-web-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-test/6.5.6/spring-security-test-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-core/6.5.6/spring-security-core-6.5.6.jar:/home/yasakar/.m2/repository/org/springframework/security/spring-security-crypto/6.5.6/spring-security-crypto-6.5.6.jar:/home/yasakar/.m2/repository/io/jsonwebtoken/jjwt-api/0.11.5/jjwt-api-0.11.5.jar:/home/yasakar/.m2/repository/io/jsonwebtoken/jjwt-impl/0.11.5/jjwt-impl-0.11.5.jar:/home/yasakar/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.11.5/jjwt-jackson-0.11.5.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.19.2/jackson-databind-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.19.2/jackson-annotations-2.19.2.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.19.2/jackson-core-2.19.2.jar:/home/yasakar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.4/springdoc-openapi-starter-webmvc-ui-2.8.4.jar:/home/yasakar/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.4/springdoc-openapi-starter-webmvc-api-2.8.4.jar:/home/yasakar/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.4/springdoc-openapi-starter-common-2.8.4.jar:/home/yasakar/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.28/swagger-core-jakarta-2.2.28.jar:/home/yasakar/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/yasakar/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.28/swagger-annotations-jakarta-2.2.28.jar:/home/yasakar/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.28/swagger-models-jakarta-2.2.28.jar:/home/yasakar/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.19.2/jackson-dataformat-yaml-2.19.2.jar:/home/yasakar/.m2/repository/org/webjars/swagger-ui/5.18.2/swagger-ui-5.18.2.jar:/home/yasakar/.m2/repository/org/webjars/webjars-locator-lite/1.1.2/webjars-locator-lite-1.1.2.jar:/home/yasakar/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/yasakar/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/yasakar/.m2/repository/org/mapstruct/mapstruct/1.6.3/mapstruct-1.6.3.jar:/home/yasakar/.m2/repository/org/spockframework/spock-core/2.4-M1-groovy-4.0/spock-core-2.4-M1-groovy-4.0.jar:/home/yasakar/.m2/repository/org/junit/platform/junit-platform-engine/1.12.2/junit-platform-engine-1.12.2.jar:/home/yasakar/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/yasakar/.m2/repository/org/junit/platform/junit-platform-commons/1.12.2/junit-platform-commons-1.12.2.jar:/home/yasakar/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/yasakar/.m2/repository/org/spockframework/spock-spring/2.4-M1-groovy-4.0/spock-spring-2.4-M1-groovy-4.0.jar:/home/yasakar/.m2/repository/org/apache/groovy/groovy/4.0.14/groovy-4.0.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/yasakar"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="/nix/store/hm028d05qs6138ggq02239sh6qf5xwd6-openjdk-21.0.8+9/lib/openjdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/yasakar/Work/zawodyweb/Backend"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/home/yasakar/Work/zawodyweb/Backend/target/surefire/surefirebooter-20260205174647439_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.8+9-nixos"/>
+    <property name="user.name" value="yasakar"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.12.61"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/yasakar/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.8"/>
+    <property name="user.dir" value="/home/yasakar/Work/zawodyweb/Backend"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="25385"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="N/A"/>
+    <property name="java.vm.version" value="21.0.8+9-nixos"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[ZawodySpringWeb] "/>
+  </properties>
+  <testcase name="getContest_ShouldReturn400_WhenIdIsNotNumber" classname="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="1.432">
+    <system-out><![CDATA[17:46:49.366 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.zawodyweb.zawodyweb.Controllers.AuthControllerSpec]: AuthControllerSpec does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:46:49.675 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.zawodyweb.zawodyweb.ZawodywebApplication for test class com.zawodyweb.zawodyweb.Controllers.AuthControllerSpec
+17:46:50.010 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.zawodyweb.zawodyweb.Controllers.AuthControllerSpec]: AuthControllerSpec does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:46:50.020 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.zawodyweb.zawodyweb.ZawodywebApplication for test class com.zawodyweb.zawodyweb.Controllers.AuthControllerSpec
+17:46:50.151 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.zawodyweb.zawodyweb.Controllers.ContestControllerTest]: ContestControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:46:50.158 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.zawodyweb.zawodyweb.ZawodywebApplication for test class com.zawodyweb.zawodyweb.Controllers.ContestControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.7)
+
+2026-02-05T17:46:51.087+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] c.z.z.Controllers.ContestControllerTest  : Starting ContestControllerTest using Java 21.0.8 with PID 25385 (started by yasakar in /home/yasakar/Work/zawodyweb/Backend)
+2026-02-05T17:46:51.089+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] c.z.z.Controllers.ContestControllerTest  : Running with Spring Boot v3.5.7, Spring v6.2.12
+2026-02-05T17:46:51.090+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] c.z.z.Controllers.ContestControllerTest  : The following 1 profile is active: "test"
+2026-02-05T17:46:53.352+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-05T17:46:53.356+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-05T17:46:53.648+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 274 ms. Found 2 JPA repository interfaces.
+2026-02-05T17:46:53.685+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-02-05T17:46:53.688+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-02-05T17:46:53.719+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zawodyweb.zawodyweb.database.repositories.ContestRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-05T17:46:53.720+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.zawodyweb.zawodyweb.database.repositories.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2026-02-05T17:46:53.720+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2026-02-05T17:46:54.689+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-05T17:46:54.829+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.33.Final
+2026-02-05T17:46:54.908+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-02-05T17:46:55.532+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-05T17:46:55.610+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-05T17:46:56.213+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-02-05T17:46:56.217+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-05T17:46:56.290+01:00  WARN 25385 --- [ZawodySpringWeb] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-02-05T17:46:56.345+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+Hibernate: 
+    create global temporary table HTE_contests(rn_ integer not null, visible boolean, end_time timestamp(6), id bigint, start_time timestamp(6), access_password varchar(64), name varchar(120), description varchar(2000), primary key (rn_)) TRANSACTIONAL
+2026-02-05T17:46:58.670+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists contests cascade 
+Hibernate: 
+    drop table if exists languages cascade 
+Hibernate: 
+    drop table if exists problem_languages cascade 
+Hibernate: 
+    drop table if exists problems cascade 
+Hibernate: 
+    drop table if exists submission_results cascade 
+Hibernate: 
+    drop table if exists submissions cascade 
+Hibernate: 
+    drop table if exists test_cases cascade 
+Hibernate: 
+    drop table if exists user_roles cascade 
+Hibernate: 
+    drop table if exists users cascade 
+Hibernate: 
+    drop sequence if exists contests_seq
+Hibernate: 
+    create sequence contests_seq start with 1 increment by 50
+Hibernate: 
+    create table contests (
+        visible boolean not null,
+        end_time timestamp(6),
+        id bigint not null,
+        start_time timestamp(6),
+        access_password varchar(64),
+        name varchar(120) not null,
+        description varchar(2000),
+        primary key (id)
+    )
+Hibernate: 
+    create table languages (
+        extension varchar(8) not null,
+        id bigint generated by default as identity,
+        name varchar(40) not null unique,
+        config clob,
+        primary key (id)
+    )
+Hibernate: 
+    create table problem_languages (
+        id bigint generated by default as identity,
+        language_id bigint not null,
+        problem_id bigint not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table problems (
+        code_size_limit_kb integer,
+        max_points integer,
+        memory_limit_mb integer,
+        time_limit_ms integer,
+        visible_in_ranking boolean not null,
+        contest_id bigint not null,
+        id bigint generated by default as identity,
+        short_code varchar(10) not null,
+        name varchar(80) not null,
+        statement clob not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table submission_results (
+        memory_kb integer,
+        points integer,
+        runtime_ms integer,
+        id bigint generated by default as identity,
+        submission_id bigint not null,
+        test_case_id bigint not null,
+        notes clob,
+        status enum ('MEMORY_LIMIT','OK','RUNTIME_ERROR','SKIPPED','TIME_LIMIT','WRONG_ANSWER'),
+        primary key (id)
+    )
+Hibernate: 
+    create table submissions (
+        visible_in_ranking boolean not null,
+        id bigint generated by default as identity,
+        language_id bigint not null,
+        problem_id bigint not null,
+        submitted_at timestamp(6) with time zone not null,
+        user_id bigint not null,
+        client_ip varchar(45),
+        filename varchar(255),
+        source_code clob not null,
+        state enum ('ACCEPTED','COMPILATION_ERROR','COMPILING','NEW','QUEUED','RUNNING','RUNTIME_ERROR','TIME_LIMIT','WRONG_ANSWER') not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table test_cases (
+        id bigint generated by default as identity,
+        problem_id bigint not null,
+        order_tag varchar(32),
+        expected_output clob not null,
+        input_data clob not null,
+        primary key (id)
+    )
+Hibernate: 
+    create table user_roles (
+        user_id bigint not null,
+        role enum ('ROLE_MODERATOR','ROLE_PROFESSOR','ROLE_USER')
+    )
+Hibernate: 
+    create table users (
+        enabled boolean not null,
+        id bigint generated by default as identity,
+        last_login_at timestamp(6) with time zone,
+        registered_at timestamp(6) with time zone not null,
+        first_name varchar(40),
+        last_name varchar(40),
+        login varchar(64) not null unique,
+        email varchar(120) unique,
+        password_hash varchar(255) not null,
+        primary key (id)
+    )
+Hibernate: 
+    alter table if exists problem_languages 
+       add constraint FK4i0k76bq22dfeyye621coqq98 
+       foreign key (language_id) 
+       references languages
+Hibernate: 
+    alter table if exists problem_languages 
+       add constraint FK1a68xythji6wodqdtroentf8x 
+       foreign key (problem_id) 
+       references problems
+Hibernate: 
+    alter table if exists problems 
+       add constraint FKpa9waom3ntotn7gpm2spnsow5 
+       foreign key (contest_id) 
+       references contests
+Hibernate: 
+    alter table if exists submission_results 
+       add constraint FK3vpwf0yhpkyrbkiog5q9ul6vt 
+       foreign key (submission_id) 
+       references submissions
+Hibernate: 
+    alter table if exists submission_results 
+       add constraint FKey10w0e8k2v9xgpkdtpshsp0x 
+       foreign key (test_case_id) 
+       references test_cases
+Hibernate: 
+    alter table if exists submissions 
+       add constraint FK9fx61y3mco1ml81vg551maq0f 
+       foreign key (language_id) 
+       references languages
+Hibernate: 
+    alter table if exists submissions 
+       add constraint FKj5kbdqokftgx992cx24x3s583 
+       foreign key (problem_id) 
+       references problems
+Hibernate: 
+    alter table if exists submissions 
+       add constraint FK760bgu69957phd7hax608jdms 
+       foreign key (user_id) 
+       references users
+Hibernate: 
+    alter table if exists test_cases 
+       add constraint FKtddrw6qnmvhxky105cag980j3 
+       foreign key (problem_id) 
+       references problems
+Hibernate: 
+    alter table if exists user_roles 
+       add constraint FKhfh9dx7w3ubf1co1vdev94g3f 
+       foreign key (user_id) 
+       references users
+2026-02-05T17:46:58.824+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-05T17:46:59.542+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-02-05T17:46:59.543+01:00  WARN 25385 --- [ZawodySpringWeb] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-02-05T17:46:59.823+01:00  WARN 25385 --- [ZawodySpringWeb] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-05T17:47:00.465+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-02-05T17:47:00.709+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2026-02-05T17:47:01.853+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] c.z.z.config.JwtAuthenticationFilter     : Filter 'jwtAuthenticationFilter' configured for use
+2026-02-05T17:47:01.856+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-02-05T17:47:01.857+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-02-05T17:47:01.860+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2026-02-05T17:47:01.944+01:00  INFO 25385 --- [ZawodySpringWeb] [           main] c.z.z.Controllers.ContestControllerTest  : Started ContestControllerTest in 11.699 seconds (process running for 14.364)
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+--------------- Created: admin ------------------
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T17:47:03.655+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T17:47:03.669+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T17:47:03.672+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+2026-02-05T17:47:04.063+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing GET /api/contests
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2026-02-05T17:47:04.099+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured GET /api/contests
+2026-02-05T17:47:04.106+01:00  WARN 25385 --- [ZawodySpringWeb] [           main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Method parameter 'id': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "not-a-number"]
+]]></system-out>
+    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/yasakar/.m2/repository/net/bytebuddy/byte-buddy-agent/1.17.8/byte-buddy-agent-1.17.8.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="getContest_ShouldReturnContest_WhenIdExists" classname="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="0.322">
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T17:47:04.145+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T17:47:04.145+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T17:47:04.146+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+Hibernate: 
+    select
+        next value for contests_seq
+Hibernate: 
+    insert 
+    into
+        contests
+        (access_password, description, end_time, name, start_time, visible, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-02-05T17:47:04.323+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing GET /api/contests
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2026-02-05T17:47:04.336+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured GET /api/contests
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0 
+    where
+        c1_0.id=?
+Hibernate: 
+    select
+        p1_0.contest_id,
+        p1_0.id,
+        p1_0.code_size_limit_kb,
+        p1_0.max_points,
+        p1_0.memory_limit_mb,
+        p1_0.name,
+        p1_0.short_code,
+        p1_0.statement,
+        p1_0.time_limit_ms,
+        p1_0.visible_in_ranking 
+    from
+        problems p1_0 
+    where
+        p1_0.contest_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="contestCreateSucess" classname="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="0.357">
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    delete 
+    from
+        contests 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T17:47:04.483+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T17:47:04.485+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+2026-02-05T17:47:04.648+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/contests
+2026-02-05T17:47:04.651+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/contests
+Hibernate: 
+    select
+        next value for contests_seq
+Hibernate: 
+    insert 
+    into
+        contests
+        (access_password, description, end_time, name, start_time, visible, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+]]></system-out>
+  </testcase>
+  <testcase name="getContest_ShouldReturn404_WhenParamIsMissing" classname="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="0.205">
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    delete 
+    from
+        contests 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T17:47:04.827+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T17:47:04.827+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T17:47:04.828+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+2026-02-05T17:47:04.991+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing GET /api/contests/
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2026-02-05T17:47:05.003+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured GET /api/contests/
+]]></system-out>
+  </testcase>
+  <testcase name="getContest_ShouldReturn404_WhenIdDoesNotExist" classname="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="0.194">
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T17:47:05.032+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T17:47:05.033+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T17:47:05.033+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+2026-02-05T17:47:05.192+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing GET /api/contests/
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2026-02-05T17:47:05.204+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured GET /api/contests/
+]]></system-out>
+  </testcase>
+  <testcase name="getAllContests_ShouldReturnList" classname="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="0.226">
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T17:47:05.227+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T17:47:05.228+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T17:47:05.228+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+Hibernate: 
+    insert 
+    into
+        contests
+        (access_password, description, end_time, name, start_time, visible, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        contests
+        (access_password, description, end_time, name, start_time, visible, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-02-05T17:47:05.392+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing GET /api/contests/all
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0 
+    where
+        u1_0.login=?
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+2026-02-05T17:47:05.403+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured GET /api/contests/all
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    select
+        p1_0.contest_id,
+        p1_0.id,
+        p1_0.code_size_limit_kb,
+        p1_0.max_points,
+        p1_0.memory_limit_mb,
+        p1_0.name,
+        p1_0.short_code,
+        p1_0.statement,
+        p1_0.time_limit_ms,
+        p1_0.visible_in_ranking 
+    from
+        problems p1_0 
+    where
+        p1_0.contest_id=?
+Hibernate: 
+    select
+        p1_0.contest_id,
+        p1_0.id,
+        p1_0.code_size_limit_kb,
+        p1_0.max_points,
+        p1_0.memory_limit_mb,
+        p1_0.name,
+        p1_0.short_code,
+        p1_0.statement,
+        p1_0.time_limit_ms,
+        p1_0.visible_in_ranking 
+    from
+        problems p1_0 
+    where
+        p1_0.contest_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="getAllContests_ShouldFail_WhenNoToken" classname="com.zawodyweb.zawodyweb.Controllers.ContestControllerTest" time="0.183">
+    <system-out><![CDATA[Hibernate: 
+    select
+        c1_0.id,
+        c1_0.access_password,
+        c1_0.description,
+        c1_0.end_time,
+        c1_0.name,
+        c1_0.start_time,
+        c1_0.visible 
+    from
+        contests c1_0
+Hibernate: 
+    delete 
+    from
+        contests 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        contests 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.email,
+        u1_0.enabled,
+        u1_0.first_name,
+        u1_0.last_login_at,
+        u1_0.last_name,
+        u1_0.login,
+        u1_0.password_hash,
+        u1_0.registered_at 
+    from
+        users u1_0
+Hibernate: 
+    select
+        r1_0.user_id,
+        r1_0.role 
+    from
+        user_roles r1_0 
+    where
+        r1_0.user_id=?
+Hibernate: 
+    delete 
+    from
+        user_roles 
+    where
+        user_id=?
+Hibernate: 
+    delete 
+    from
+        users 
+    where
+        id=?
+2026-02-05T17:47:05.458+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing POST /api/auth/register
+2026-02-05T17:47:05.458+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T17:47:05.459+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Secured POST /api/auth/register
+Hibernate: 
+    select
+        u1_0.id 
+    from
+        users u1_0 
+    where
+        u1_0.email=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        users
+        (email, enabled, first_name, last_login_at, last_name, login, password_hash, registered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, default)
+Hibernate: 
+    insert 
+    into
+        user_roles
+        (user_id, role) 
+    values
+        (?, ?)
+2026-02-05T17:47:05.618+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.security.web.FilterChainProxy        : Securing GET /api/contests/all
+2026-02-05T17:47:05.618+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-02-05T17:47:05.620+01:00 DEBUG 25385 --- [ZawodySpringWeb] [           main] o.s.s.w.a.Http403ForbiddenEntryPoint     : Pre-authenticated entry point called. Rejecting access
+]]></system-out>
+  </testcase>
+</testsuite>

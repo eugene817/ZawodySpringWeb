@@ -3,6 +3,8 @@ plugins {
     id 'groovy'
     id 'com.diffplug.spotless' version '6.25.0'
     id 'jacoco'
+    id 'org.springframework.boot' version '3.5.7'
+    id 'io.spring.dependency-management' version '1.1.4'
 }
 
 group = 'com.zawodyweb'
@@ -29,6 +31,7 @@ dependencies {
     implementation libs.org.springframework.boot.spring.boot.starter.web
     implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
     implementation libs.org.springframework.boot.spring.boot.starter.security
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation libs.org.springframework.boot.spring.boot.starter.data.redis.reactive
     implementation libs.jakarta.validation.jakarta.validation.api
     

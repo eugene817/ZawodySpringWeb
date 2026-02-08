@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-02-05T19:02:02+0100",
-    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.3.jar, environment: Java 21.0.8 (N/A)"
+    date = "2026-02-08T22:39:15+0000",
+    comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.3.jar, environment: Java 21.0.9 (N/A)"
 )
 @Component
 public class ContestMapperImpl implements ContestMapper {
@@ -60,13 +60,19 @@ public class ContestMapperImpl implements ContestMapper {
             return null;
         }
 
-        String name = null;
+        ProblemResponse.ProblemResponseBuilder problemResponse = ProblemResponse.builder();
 
-        name = problem.getName();
+        problemResponse.id( problem.getId() );
+        problemResponse.name( problem.getName() );
+        problemResponse.shortCode( problem.getShortCode() );
+        problemResponse.statement( problem.getStatement() );
+        problemResponse.memoryLimitMb( problem.getMemoryLimitMb() );
+        problemResponse.codeSizeLimitKb( problem.getCodeSizeLimitKb() );
+        problemResponse.timeLimitMs( problem.getTimeLimitMs() );
+        problemResponse.maxPoints( problem.getMaxPoints() );
+        problemResponse.visibleInRanking( problem.isVisibleInRanking() );
 
-        ProblemResponse problemResponse = new ProblemResponse( name );
-
-        return problemResponse;
+        return problemResponse.build();
     }
 
     protected List<ProblemResponse> problemListToProblemResponseList(List<Problem> list) {

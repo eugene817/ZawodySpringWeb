@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GlobalExceptionHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">zawodyweb</a> &gt; <a href="index.source.html" class="el_package">com.zawodyweb.zawodyweb.exceptions</a> &gt; <span class="el_source">GlobalExceptionHandler.java</span></div><h1>GlobalExceptionHandler.java</h1><pre class="source lang-java linenums">package com.zawodyweb.zawodyweb.exceptions;
+
+import java.util.HashMap;
+import java.util.Map;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+<span class="fc" id="L16">public class GlobalExceptionHandler {</span>
+
+  @ExceptionHandler(BusinessException.class)
+  public ResponseEntity&lt;?&gt; handleBusinessException(BusinessException ex) {
+<span class="nc" id="L20">    return ResponseEntity.status(ex.getStatus())</span>
+<span class="nc" id="L21">        .body(</span>
+<span class="nc" id="L22">            Map.of(</span>
+<span class="nc" id="L23">                &quot;error&quot;, ex.getMessage(),</span>
+<span class="nc" id="L24">                &quot;timestamp&quot;, System.currentTimeMillis()));</span>
+  }
+
+  @ExceptionHandler(BadCredentialsException.class)
+  public ResponseEntity&lt;Object&gt; handleBadCredentials(BadCredentialsException ex) {
+<span class="fc" id="L29">    return ResponseEntity.status(HttpStatus.UNAUTHORIZED)</span>
+<span class="fc" id="L30">        .body(Map.of(&quot;error&quot;, &quot;Wrong Login or password&quot;, &quot;timestamp&quot;, System.currentTimeMillis()));</span>
+  }
+
+  @ExceptionHandler(MethodArgumentNotValidException.class)
+  public ResponseEntity&lt;Object&gt; handleValidationExceptions(MethodArgumentNotValidException ex) {
+<span class="nc" id="L35">    Map&lt;String, String&gt; errors = new HashMap&lt;&gt;();</span>
+
+<span class="nc" id="L37">    ex.getBindingResult()</span>
+<span class="nc" id="L38">        .getAllErrors()</span>
+<span class="nc" id="L39">        .forEach(</span>
+            (error) -&gt; {
+<span class="nc" id="L41">              String fieldName = ((FieldError) error).getField();</span>
+<span class="nc" id="L42">              String errorMessage = error.getDefaultMessage();</span>
+<span class="nc" id="L43">              errors.put(fieldName, errorMessage);</span>
+<span class="nc" id="L44">            });</span>
+
+<span class="nc" id="L46">    return ResponseEntity.status(HttpStatus.BAD_REQUEST)</span>
+<span class="nc" id="L47">        .body(</span>
+<span class="nc" id="L48">            Map.of(</span>
+                &quot;error&quot;,
+                &quot;Error validating data&quot;,
+                &quot;details&quot;,
+                errors,
+                &quot;timestamp&quot;,
+<span class="nc" id="L54">                System.currentTimeMillis()));</span>
+  }
+
+  @ExceptionHandler(AccessDeniedException.class)
+  public ResponseEntity&lt;Object&gt; handleAccessDenied(AccessDeniedException ex) {
+<span class="nc" id="L59">    return ResponseEntity.status(HttpStatus.FORBIDDEN)</span>
+<span class="nc" id="L60">        .body(</span>
+<span class="nc" id="L61">            Map.of(</span>
+                &quot;error&quot;, &quot;Access Denied&quot;,
+                &quot;message&quot;, &quot;You have no permission to access this&quot;));
+  }
+
+  @ExceptionHandler(DisabledException.class)
+  public ResponseEntity&lt;Object&gt; handleDisabled(DisabledException ex) {
+<span class="nc" id="L68">    return ResponseEntity.status(HttpStatus.FORBIDDEN)</span>
+<span class="nc" id="L69">        .body(Map.of(&quot;error&quot;, &quot;Your account is banned or inactive&quot;));</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
