@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProblemCreateRequest {
-    @NotBlank(message = "Name is mandatory")
-    private String name;
-    private String shortCode;
-    private String statement;
-    private Integer memoryLimitMb;
-    private Integer codeSizeLimitKb;
-    private Integer timeLimitMs;
-    private Integer maxPoints;
-    @Builder.Default
-    private boolean visibleInRanking = true;
+  @NotBlank(message = "Name is mandatory")
+  private String name;
+
+  private String shortCode;
+  private String statement;
+  private Integer memoryLimitMb;
+  private Integer codeSizeLimitKb;
+  private Integer timeLimitMs;
+  private Integer maxPoints;
+  @Builder.Default private boolean visibleInRanking = true;
 }
