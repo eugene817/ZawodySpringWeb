@@ -2,3 +2,8 @@
 
 
 Remake of https://github.com/faramir/ZawodyWeb with Java Spring Boot
+
+# Run
+
+- To run simply use:
+`docker compose up --build`
