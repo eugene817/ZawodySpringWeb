@@ -1,0 +1,100 @@
+plugins {
+    id 'java-library'
+    id 'groovy'
+    id 'com.diffplug.spotless' version '6.25.0'
+    id 'jacoco'
+    id 'org.springframework.boot' version '3.5.7'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.zawodyweb'
+version = '0.1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    implementation libs.org.springframework.boot.spring.boot.starter.web
+    implementation libs.org.springframework.boot.spring.boot.starter.data.jpa
+    implementation libs.org.springframework.boot.spring.boot.starter.security
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation libs.org.springframework.boot.spring.boot.starter.data.redis.reactive
+    implementation libs.jakarta.validation.jakarta.validation.api
+    
+    implementation libs.io.jsonwebtoken.jjwt.api
+    runtimeOnly libs.io.jsonwebtoken.jjwt.impl
+    runtimeOnly libs.io.jsonwebtoken.jjwt.jackson
+    implementation libs.org.springdoc.springdoc.openapi.starter.webmvc.ui
+    implementation libs.org.apache.groovy.groovy
+    runtimeOnly libs.org.postgresql.postgresql
+
+    testImplementation libs.org.springframework.boot.spring.boot.starter.test
+    testImplementation libs.org.springframework.security.spring.security.test
+    testImplementation libs.org.spockframework.spock.core
+    testImplementation libs.org.spockframework.spock.spring
+    testImplementation libs.com.h2database.h2
+    
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.junit.platform') {
+            details.useVersion '1.10.2'
+        }
+        if (details.requested.group == 'org.junit.jupiter') {
+            details.useVersion '5.10.2'
+        }
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << '-parameters'
+    options.encoding = 'UTF-8'
+}
+
+spotless {
+    java {
+        target 'src/*/java/**/*.java'
+        googleJavaFormat()
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+    groovy {
+        target 'src/*/groovy/**/*.groovy'
+        greclipse()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = true
+        html.outputLocation = layout.buildDirectory.dir('reports/jacoco')
+    }
+}
