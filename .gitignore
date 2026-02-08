@@ -1,41 +1,26 @@
-### Gradle ###
-.gradle/
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!gradle/wrapper/gradle-wrapper.properties
-
-gradle.properties
-.gradletasknamecache
-
-### IDE & OS###
 .idea/
-*.iml
-*.iws
 .vscode/
-.DS_Store
-Thumbs.db
-
-### Java & Spring ###
-bin/
-*.class
-*.jar
-*.war
-*.zip
-*.tar.gz
-
-### Frontend ###
-node_modules/
-dist/
-.angular/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-### Environment & Secrets ###
-.env
-.env.local
-out/
-
-### Logs ###
-logs/
+*.iml
 *.log
+
+### Backend (Gradle & Java) ###
+Backend/.gradle/
+Backend/build/
+Backend/target/
+Backend/out/
+Backend/bin/
+Backend/.settings/
+Backend/.classpath
+Backend/.project
+Backend/.factorypath
+Backend/*.class
+Backend/*.jar
+
+# Maven
+Backend/dependency-reduced-pom.xml
+
+### Frontend (Node) ###
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.angular/
+Frontend/*.log
