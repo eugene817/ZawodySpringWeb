@@ -1,7 +1,24 @@
-<nav>
-	<a routerLink="/">Contests</a> |
-	<a routerLink="/login">Login</a>
+<nav class="navbar">
+	<div class="nav-container">
+		<div class="brand">
+			<a routerLink="/contests" class="logo">ZawodySpringWeb</a>
+		</div>
+
+		<div class="links">
+			<a routerLink="/contests" routerLinkActive="active">All contests</a>
+
+			@if (authService.isLoggedIn()) {
+			<div class="user-section">
+				<a routerLink="/profile" class="profile-link">
+					<span class="user-icon">👤</span>
+					{{ authService.getUsername() }}
+				</a>
+			</div>
+			} @else {
+			<a routerLink="/login" class="login-btn">Login</a>
+			}
+		</div>
+	</div>
 </nav>
-<hr>
 
 <router-outlet></router-outlet>
