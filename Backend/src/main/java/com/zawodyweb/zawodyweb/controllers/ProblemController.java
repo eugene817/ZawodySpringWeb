@@ -8,6 +8,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,6 +25,7 @@ public class ProblemController {
         .body(problemService.addProblemToContest(contestId, request));
   }
 
+  @Transactional(readOnly = true)
   @GetMapping("/contest/{contestId}")
   public ResponseEntity<List<ProblemResponse>> getContestProblems(@PathVariable Long contestId) {
     return ResponseEntity.ok(problemService.getProblemsByContest(contestId));

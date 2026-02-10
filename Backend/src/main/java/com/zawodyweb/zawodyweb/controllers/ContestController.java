@@ -6,6 +6,7 @@ import com.zawodyweb.zawodyweb.services.ContestService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,11 +31,13 @@ public class ContestController {
     return ResponseEntity.ok("Success");
   }
 
+  @Transactional(readOnly = true)
   @GetMapping
   public ResponseEntity<ContestResponse> getContest(@RequestParam Long id) {
     return ResponseEntity.ok(contestService.getContest(id));
   }
 
+  @Transactional(readOnly = true)
   @GetMapping("/all")
   public ResponseEntity<List<ContestResponse>> getAllContests() {
     return ResponseEntity.ok(contestService.getAllContests());
